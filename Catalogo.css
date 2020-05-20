@@ -1,0 +1,102 @@
+html{
+	background-color: black;
+	padding: 0 auto;
+}
+
+body{
+	margin: 0 auto;
+}
+
+.header{
+	position: relative;
+	height: 65px;
+	width: 100%;
+	background-color: #181818;
+	display: flex;
+	flex-direction: row;
+}
+
+.botonera{
+	padding-right: 15px;
+	width: 75%;
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.header_container{
+	width: 100%;
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.divNombre{
+	padding: 5px;
+	width: 25%;
+	font-size: 18px;
+	display: block;
+	text-align: left;
+	margin-left: 35px;
+	color: white;
+}
+.username_header{
+	margin: 100%;
+	font-family: century gothic;
+	width: 350px;
+}
+
+button{
+	width: 100px;
+	margin: 10px;
+	background-color: lime;
+}
+
+button:hover{
+	background-color: darkgreen;
+}
+
+/* FIN DEL HEADER */
+
+.body{
+	padding: 50px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.song_Container{
+	margin: 20px;
+	height: 300px;
+	width: 200px;
+	border-radius: 10px;
+	margin: 15px;
+	padding: 0;
+	transition:all .5s ease-in-out;
+	opacity: .6;
+}
+
+.song_Container:hover{
+	transition:all .5s ease-in-out;
+	color: white;
+	opacity: 1;
+
+}
+
+.song_Container_info{
+	font-size: 21px;
+	z-index: 3;
+	height: 300px;
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	border-radius: 10px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.song_Container_info:hover{
+	transition:all .5s ease-in-out;
+
+}

@@ -1,0 +1,141 @@
+html{
+	background-color: black;
+	padding: 0 auto;
+	height: 100%;
+}
+
+body{
+	margin: 0 auto;
+	height: 100%;
+	align-content: center;
+	display: block;
+}
+
+.header{
+	position: relative;
+	height: 65px;
+	width: 100%;
+	background-color: #181818;
+	display: flex;
+	flex-direction: row;
+}
+
+.botonera{
+	padding-right: 15px;
+	width: 75%;
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.header_container{
+	width: 100%;
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.divNombre{
+	padding: 5px;
+	width: 25%;
+	font-size: 18px;
+	display: block;
+	text-align: left;
+	margin-left: 35px;
+	color: white;
+}
+.username_header{
+	margin: 100%;
+	font-family: century gothic;
+	width: 350px;
+}
+
+button{
+	width: 100px;
+	margin: 10px;
+	background-color: lime;
+}
+
+button:hover{
+	background-color: darkgreen;
+}
+
+.body{
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	align-content: center;
+	margin-top: 25px;
+	margin-left: 20%;
+	background-color: white;
+	opacity: .8;
+	border-radius: 30px;
+	width: 60%;
+}
+
+#uploadbtn{
+	margin: 10%;
+	margin-top: 25px;
+	margin-bottom: 15px;
+	background-color: lime;
+	border-radius: 10px;
+	width: 80%;
+	font-size: 25px;
+}
+
+input{
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: center;
+	align-content: center;
+	width: 70%;
+	margin: 10%;
+	margin-top: 25px;
+	margin-bottom: 15px;
+	opacity: 1;
+	font-family: century gothic;
+	font-size: 25px;
+	background-color: #999999;
+	border-radius: 15px;
+	color: white;
+}
+
+form{
+	width: 100%;
+}
+
+.song_Container{
+	margin: 20px;
+	height: 300px;
+	width: 200px;
+	border-radius: 10px;
+	margin: 15px;
+	padding: 0;
+	transition:all .5s ease-in-out;
+	opacity: .6;
+}
+
+.song_Container:hover{
+	transition:all .5s ease-in-out;
+	color: white;
+	opacity: 1;
+
+}
+
+.song_Container_info{
+	font-size: 21px;
+	z-index: 3;
+	height: 300px;
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	border-radius: 10px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.song_Container_info:hover{
+	transition:all .5s ease-in-out;
+
+}
