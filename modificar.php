@@ -32,12 +32,12 @@ innodb_lock_wait_timeout=28800
 <?php
 
 if (isset($_POST['btn'])) {
-    $dbh = new PDO("mysql:host=localhost;dbname=diskover", "root", "");
+    $dbh = new PDO("mysql:host=localhost;dbname=diskover2", "root", "");
     $data = file_get_contents($_FILES['cancion']['tmp_name']);
     $dataString = sha1(strval($data));
     $query = $dbh->query('select Name,Album,Artist from songs where hash = "'.$dataString.'" and uploader = "'.$userID.'"')->fetchAll();
     if (!$query) {
-        echo "<script>alert('Aún no tenemos esta canción en el sistema');</script>";
+        echo "<script>alert('Tu usuario no ha subido esta canción y no puedes modificarla');</script>";
     }
     else
     {
@@ -51,23 +51,24 @@ if (isset($_POST['btn'])) {
             <input required="true" type="text" value="'.$query[0][2].'" placeholder="Autor" name="artista">
             <br>
             <br>
-             <button type="submit" name="mod" id="uploadbtn">Modificar</button>
-             <button type="submit" name="btn_borrar" style="background-color: tomato;" id="uploadbtn">Borrar</button>';
+            <button type="submit" name="mod" id="uploadbtn">Modificar</button>
+            <button type="submit" name="btn_borrar" style="background-color: tomato;" id="uploadbtn">Borrar</button>';
     }
 }else if (isset($_POST['btn_borrar'])) {
-    $dbh = new PDO("mysql:host=localhost;dbname=diskover", "root", "");
+    $dbh = new PDO("mysql:host=localhost;dbname=diskover2", "root", "");
     $dataString = $_SESSION["hash-img"];
-    $query = $dbh->prepare('DELETE from songs where Hash = "'.$dataString.'"and uploader = "$userID"')->execute();
+    $query = $dbh->prepare('DELETE from songs where Hash = "'.$dataString.'" and uploader = "'.$userID.'"')->execute();
+    echo("<script>Eliminado correctamente</script>");
 }else if (isset($_POST['mod'])) {
-    $dbh = new PDO("mysql:host=localhost;dbname=diskover", "root", "");
+    $dbh = new PDO("mysql:host=localhost;dbname=diskover2", "root", "");
     $dataString = $_SESSION["hash-img"];
     $name_query = $_POST["titulo"];
     $album_query = $_POST["album"];
     $autor_query = $_POST["artista"];
     $userID = $_SESSION["id-user"];
     $query = $dbh->prepare('UPDATE `songs` SET `Name` = "'.$name_query.'", `Album` = "'.$album_query.'", `Artist` = "'.$autor_query.'" WHERE `songs`.`hash` = "'.$dataString.'" and uploader = "'.$userID.'"')->execute();
+    echo("<script>Modificado correctamente</script>");
 }
-
 
 ?>
 <div class="body">

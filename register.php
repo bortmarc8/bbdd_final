@@ -11,8 +11,8 @@ if (isset($_POST['usu_crear']) && isset($_POST['psw_crear']) && $_POST['psw_crea
 	$username = $_POST['usu_crear'];
 	$password = $_POST['psw_crear'];
 	$data = file_get_contents($_FILES['foto']['tmp_name']);
-	$dbh = new PDO("mysql:host=localhost;dbname=diskover", "root", "");
-	$query = $dbh->query("SELECT id from users where username = '$username'")->fetch();
+	$dbh = new PDO("mysql:host=localhost;dbname=diskover2", "root", "");
+	$query = $dbh->query("SELECT id from users where username = '".$username."'")->fetch();
 
 	if (!$query) {
 		$stmt = $dbh->prepare("insert into users values('',?,?,?)");
@@ -46,13 +46,13 @@ else
 	<form action="" method="post">
 		<img src="local_resources/img/user.png" alt="Avatar" class="avatar">
 
-		<input type="text" placeholder="Usuario" name="usu_crear" required>
+		<input type="text" placeholder="Usuario" name="usu_crear">
 	
-		<input type="password" placeholder="Contraseña" name="psw_crear" required>
+		<input type="password" placeholder="Contraseña" name="psw_crear">
 
-		<input type="password" placeholder="Repetir contraseña" name="psw_crear2" required>
+		<input type="password" placeholder="Repetir contraseña" name="psw_crear2">
 
-		<input required="true" type="file" accept="image/*" name="foto" required>
+		<input required="true" type="file" accept="image/*" name="foto">
 		<br>
 		<button id="ok_btn" name="btnok" type="submit">Crear cuenta</button>
 		</form>

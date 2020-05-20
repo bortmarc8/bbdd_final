@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="misSubidas.css">
 </head>
  <?php 
-$dbh = new PDO("mysql:host=localhost;dbname=diskover", "root", "");
+$dbh = new PDO("mysql:host=localhost;dbname=diskover2", "root", "");
  ?>
 <body>
 <?php require("header.php") ?>

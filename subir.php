@@ -21,7 +21,7 @@ innodb_lock_wait_timeout=28800
 	-->
 	<?php include("header.php");?>
 	<?php 
-	$dbh = new PDO("mysql:host=localhost;dbname=diskover", "root", "");
+	$dbh = new PDO("mysql:host=localhost;dbname=diskover2", "root", "");
 	if (isset($_POST['btn'])) {
 		$data = file_get_contents($_FILES['cancion']['tmp_name']);
 		$pic = file_get_contents($_FILES['pic']['tmp_name']);

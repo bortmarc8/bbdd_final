@@ -30,7 +30,7 @@ innodb_lock_wait_timeout=28800
 </div>
 <div class="body">
 <?php
-	$dbh = new PDO("mysql:host=localhost;dbname=diskover", "root", "");
+	$dbh = new PDO("mysql:host=localhost;dbname=diskover2", "root", "");
 if (isset($_POST['btn'])) {
     $data = file_get_contents($_FILES['cancion']['tmp_name']);
     $dataString = sha1(strval($data));

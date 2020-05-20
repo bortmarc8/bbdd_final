@@ -7,7 +7,7 @@
 </head>
 <body>
  <?php 
-$dbh = new PDO("mysql:host=localhost;dbname=diskover", "root", "");
+$dbh = new PDO("mysql:host=localhost;dbname=diskover2", "root", "");
 ?>
 
 <?php include("header.php");?>
@@ -18,7 +18,7 @@ $dbh = new PDO("mysql:host=localhost;dbname=diskover", "root", "");
  			$background = 'data:image/png;base64,'.base64_encode($query[$i]['Pic']);
  			$song = 'data:image/mp3;base64,'.base64_encode($query[$i]['File']);
  			echo '<div class="song_Container">
- 		<div class="song_Container_info" style="background-image:url('.$background.'">
+ 			<div class="song_Container_info" style="background-image:url('.$background.'">
 			<p>'.$query[$i]["Name"].'</p>
 	 		<div class="btn_Play">
 	 		</div>
@@ -30,6 +30,5 @@ $dbh = new PDO("mysql:host=localhost;dbname=diskover", "root", "");
  	</div>';}
  	 ?>
  	</div>
- 				<!--  -->
 </body>
 </html>
